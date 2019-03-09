@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.cameraserver.*;
+import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.subsystems.*;
 import frc.robot.commands.*;
 
@@ -24,7 +25,14 @@ import frc.robot.commands.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static DriveTrain mydrive= new DriveTrain();
+  public static DriveTrain mydrive = new DriveTrain();
+  public static RobotArm myArm = new RobotArm();
+  public static RobotHand myHand = new RobotHand();
+  public static RearWheel rearWheel = new RearWheel();
+  public static Compressor mycompressor = new Compressor(0);
+  public static FrontRam frontRam = new FrontRam();
+  public static BackRam backRam = new BackRam();
+
   public static OI m_oi;
 
   Command m_autonomousCommand;
@@ -42,7 +50,10 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
     
     // Camera System
-		CameraServer.getInstance().startAutomaticCapture();
+    CameraServer.getInstance().startAutomaticCapture();
+    
+    // Initialize Compressor
+    mycompressor.setClosedLoopControl(true);
   }
 
   /**

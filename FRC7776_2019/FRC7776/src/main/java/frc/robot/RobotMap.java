@@ -16,17 +16,27 @@ package frc.robot;
 
 public class RobotMap {
 	//system ports
+
 	
-	 public static int leftMotor = 0;
-	 public static int rightMotor = 1;
-	 //public static int climberPort = 2;
+	 public static int leftFrontMotor = 0;
+	 public static int leftRearMotor = 1;
+	 public static int rightFrontMotor = 2;
+	 public static int rightRearMotor = 3;
+	 public static int robotArmPort = 4;
+	 public static int robotHandPort = 5;
+	 public static int robotWheelPort = 6;
 	 //public static int drivePort = 3;
 	 //public static int elevatorPort = 4;
 	 public static int joystickPort = 0;
+	 public static int gamePadPort = 1;
+
 
 	 // DriveTrain Variables
 	 public static int driveTrainArraySize = 50;
 	 public static int driveTurnArraySize = 30;
+
+	 //arm Variables
+	 public static int armArraySize = 35;
 	 
 	 //autonomous code 
 	 
@@ -38,5 +48,9 @@ public class RobotMap {
 	 //telop throttling 
 	 
 	 public static double driveThrottle= 0.3;
-   public static double turnThrottle= 0.9;
+		public static double turnThrottle= 0.9;
+		
+		public static double armThrottle= 0.6;
+
+		public static double handThrottle= 0.3;
 }

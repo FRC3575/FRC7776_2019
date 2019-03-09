@@ -10,6 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.*;
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -25,15 +27,30 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
     // number it is.
     
     public static Joystick myJoystick = new Joystick(RobotMap.joystickPort);
-    //public static Button elevatorUpButton = new JoystickButton(myJoystick,6);
-    //public static Button elevatorDownButton = new JoystickButton(myJoystick,4);
+    //public static Joystick myGamepad = new Joystick(RobotMap.gamePadPort);
+    public static XboxController myGamepad = new XboxController(RobotMap.gamePadPort);
+    public static Button grabBall = new JoystickButton(myGamepad,5);
+    public static Button throwBall = new JoystickButton(myGamepad,6);
+    public static Button frontRamDown = new JoystickButton(myGamepad,2);
+    public static Button frontRamUp = new JoystickButton(myGamepad,4);
+    public static Button backRamDown = new JoystickButton(myGamepad,1);
+    public static Button backRamUp = new JoystickButton(myGamepad,3);
+    public static Button rearWheelForward = new JoystickButton(myJoystick,5);
+    public static Button rearWheelReverse = new JoystickButton(myJoystick,3);
     //public static Button climberUpButton = new JoystickButton(myJoystick,3);
     //public static Button climberDownButton = new JoystickButton(myJoystick,5);
     //public static Button sendPunchButton = new JoystickButton(myJoystick,2);
     //public static Button sendBottomPunchButton = new JoystickButton(myJoystick,1);
     
     public OI() { 
-      //elevatorUpButton.whileHeld(new ElevatorUp());
+      grabBall.whileHeld(new GrabBall());
+      throwBall.whileHeld(new ThrowBall());
+      frontRamDown.whenPressed(new FrontRamDown());
+      frontRamUp.whileHeld(new FrontRamUp());
+      backRamDown.whenPressed(new BackRamDown());
+      backRamUp.whileHeld(new BackRamUp());
+      rearWheelForward.whileHeld(new RearWheelForward());
+      rearWheelReverse.whileHeld(new RearWheelReverse());
       // elevatorDownButton.whileHeld(new ElevatorDown());
        //climberDownButton.whileHeld(new ClimbDown());
        //climberUpButton.whileHeld(new ClimbUp());

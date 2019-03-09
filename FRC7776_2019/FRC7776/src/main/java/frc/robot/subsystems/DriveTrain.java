@@ -15,7 +15,6 @@ import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 /**
  * Add your docs here.
@@ -25,8 +24,10 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
   public class DriveTrain extends Subsystem {
 
     // Define and set ports for both left and right drives
-	private Spark leftMotor; 
-	private Spark rightMotor;
+	private Spark leftFrontMotor; 
+	private Spark rightFrontMotor;
+	private Spark leftRearMotor; 
+	private Spark rightRearMotor;
 	
 	private SpeedControllerGroup leftSide;
 	private SpeedControllerGroup rightSide;
@@ -39,13 +40,18 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 	private double[] driveTurnArray = new double[RobotMap.driveTurnArraySize];
 	
 	public DriveTrain() {
-		leftMotor = new Spark(RobotMap.leftMotor);
-		rightMotor = new Spark(RobotMap.rightMotor);
+		leftFrontMotor = new Spark(RobotMap.leftFrontMotor);
+		leftRearMotor = new Spark(RobotMap.leftRearMotor);
+		rightFrontMotor = new Spark(RobotMap.rightFrontMotor);
+		rightRearMotor = new Spark(RobotMap.rightRearMotor);
 		
-		leftSide = new SpeedControllerGroup(leftMotor);
-		rightSide = new SpeedControllerGroup(rightMotor);
+		leftSide = new SpeedControllerGroup(leftFrontMotor, leftRearMotor);
+		rightSide = new SpeedControllerGroup(rightFrontMotor, rightRearMotor);
 		
-		rightMotor.setInverted(true);
+		//rightMotor.setInverted(true);
+
+		leftSide.setInverted(true);
+		rightSide.setInverted(true);
 		
 		driveTrain = new DifferentialDrive(leftSide, rightSide);
 
