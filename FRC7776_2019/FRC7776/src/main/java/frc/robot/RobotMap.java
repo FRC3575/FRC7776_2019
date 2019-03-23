@@ -24,7 +24,7 @@ public class RobotMap {
 	 public static int rightRearMotor = 3;
 	 public static int robotArmPort = 4;
 	 public static int robotHandPort = 5;
-	 public static int robotWheelPort = 6;
+	 public static int robotWheelPort = 7;
 	 //public static int drivePort = 3;
 	 //public static int elevatorPort = 4;
 	 public static int joystickPort = 0;
@@ -32,11 +32,11 @@ public class RobotMap {
 
 
 	 // DriveTrain Variables
-	 public static int driveTrainArraySize = 50;
-	 public static int driveTurnArraySize = 30;
+	 public static int driveTrainArraySize = 20;
+	 public static int driveTurnArraySize = 8;
 
 	 //arm Variables
-	 public static int armArraySize = 35;
+	 public static int armArraySize = 15;
 	 
 	 //autonomous code 
 	 
@@ -52,5 +52,5 @@ public class RobotMap {
 		
 		public static double armThrottle= 0.6;
 
-		public static double handThrottle= 0.3;
+		public static double handThrottle= 1.0;
 }

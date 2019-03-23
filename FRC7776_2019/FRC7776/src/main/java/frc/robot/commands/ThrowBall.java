@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.*;
 
@@ -26,7 +27,14 @@ public class ThrowBall extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.myHand.thorwBall();
+
+    if(OI.myGamepad.getTriggerAxis(Hand.kLeft) > 0.1){
+      Robot.myHand.grabBall();
+    }else if(OI.myGamepad.getTriggerAxis(Hand.kRight) > 0.1){
+      Robot.myHand.thorwBall();
+    }else{
+      Robot.myHand.stopBall();
+    }
 
   }
 

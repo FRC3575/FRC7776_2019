@@ -24,11 +24,11 @@ public class RearWheel extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  public void forward(){
-_wheel.setSpeed(0.3);
+  public void forward(double speedIn){
+    _wheel.setSpeed(speedIn * -1.0);
   }
-  public void reverse(){
-    _wheel.setSpeed(-0.3);
+  public void reverse(double speedIn){
+    _wheel.setSpeed(speedIn);
   }
   public void stop(){
     _wheel.setSpeed(0.0);

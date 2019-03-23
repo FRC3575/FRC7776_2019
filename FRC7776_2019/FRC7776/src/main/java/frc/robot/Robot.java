@@ -50,7 +50,8 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
     
     // Camera System
-    CameraServer.getInstance().startAutomaticCapture();
+    CameraServer.getInstance().startAutomaticCapture(0);
+    //CameraServer.getInstance().startAutomaticCapture(1);
     
     // Initialize Compressor
     mycompressor.setClosedLoopControl(true);

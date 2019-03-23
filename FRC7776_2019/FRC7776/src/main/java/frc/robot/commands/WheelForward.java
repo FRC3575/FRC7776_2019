@@ -25,7 +25,7 @@ public class WheelForward extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.rearWheel.forward();
+    Robot.rearWheel.forward(-1.0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

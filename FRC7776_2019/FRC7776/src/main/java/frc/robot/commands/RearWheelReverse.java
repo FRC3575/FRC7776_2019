@@ -12,10 +12,15 @@ import frc.robot.subsystems.*;
 import frc.robot.Robot;
 
 public class RearWheelReverse extends Command {
-  public RearWheelReverse() {
+
+  public double speed;
+  
+  public RearWheelReverse(double timeOutS, double speedIn) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.rearWheel);
+    speed = speedIn;
+    setTimeout(timeOutS);
   }
 
   // Called just before this Command runs the first time
@@ -26,13 +31,13 @@ public class RearWheelReverse extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.rearWheel.reverse();
+    Robot.rearWheel.reverse(speed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return isTimedOut();
   }
 
   // Called once after isFinished returns true
