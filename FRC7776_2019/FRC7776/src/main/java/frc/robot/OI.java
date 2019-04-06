@@ -27,48 +27,23 @@ import edu.wpi.first.wpilibj.XboxController;
     // You create one by telling it which joystick it's on and which button
     // number it is.
     
+    // Controller definitions
     public static Joystick myJoystick = new Joystick(RobotMap.joystickPort);
     public static XboxController myGamepad = new XboxController(RobotMap.gamePadPort);
-    //public static Button grabBall = new JoystickButton(myGamepad,5);
-   // public static Trigger grabBall = new JoystickButton(myGamepad,2);
-
-    //public static Button throwBall = new JoystickButton(myGamepad,6);
+    
+    // Button Actions
     public static Button frontRamDown = new JoystickButton(myGamepad,3);
     public static Button frontRamUp = new JoystickButton(myGamepad,2);
-    //public static Button climbUp = new JoystickButton(myGamepad,4);
-    //public static Button climbUpRamsonly = new JoystickButton(myGamepad,2);
     public static Button backRamDown = new JoystickButton(myGamepad,4);
-
-    //public static Button climbDown = new JoystickButton(myGamepad,1);
-    //public static Button rearWheelDown = new JoystickButton(myJoystick,5);
     public static Button backRamUp = new JoystickButton(myGamepad,1);
-   // public static Button rearWheelForward = new JoystickButton(myGamepad,3);
-   // public static Button rearWheelReverse = new JoystickButton(myGamepad,2);
-
+   
     
     public OI() { 
-      //grabBall.whileHeld(new GrabBall());
-      //throwBall.whileHeld(new ThrowBall());
+      
       frontRamDown.whenPressed(new FrontRamDown());
       frontRamUp.whenPressed(new FrontRamUp());
-    // climbUp.whenPressed(new ClimbUp());
-
       backRamDown.whenPressed(new BackRamDown());
-     backRamUp.whenPressed(new BackRamUp());
+      backRamUp.whenPressed(new BackRamUp());
       
-     //climbUp.whenPressed(new ClimbUp());
-     //climbDown.whenPressed(new ClimbDown());
-
-     //climbUpRamsonly.whenPressed(new ClimbRamsOnly());
-
-      //rearWheelForward.whileHeld(new WheelForward());
-     // rearWheelReverse.whileHeld(new WheelReverse());
-      // elevatorDownButton.whileHeld(new ElevatorDown());
-       //climberDownButton.whileHeld(new ClimbDown());
-       //climberUpButton.whileHeld(new ClimbUp());
-       //sendPunchButton.whenPressed(new PunchForward());
-       //sendPunchButton.whenReleased(new PunchReverse());
-       //sendBottomPunchButton.whenPressed(new BottomPunchForward());
-       //sendBottomPunchButton.whenReleased(new BottomPunchReverse());
     }
 }

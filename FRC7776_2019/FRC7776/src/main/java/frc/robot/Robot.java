@@ -28,7 +28,6 @@ public class Robot extends TimedRobot {
   public static DriveTrain mydrive = new DriveTrain();
   public static RobotArm myArm = new RobotArm();
   public static RobotHand myHand = new RobotHand();
-  public static RearWheel rearWheel = new RearWheel();
   public static Compressor mycompressor = new Compressor(0);
   public static FrontRam frontRam = new FrontRam();
   public static BackRam backRam = new BackRam();

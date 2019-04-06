@@ -36,7 +36,7 @@ public class ClimbDown extends CommandGroup {
 
     requires(Robot.frontRam);
     requires(Robot.backRam);
-    requires(Robot.rearWheel);
+
     requires(Robot.mydrive);
 
     addParallel(new FrontRamUp());

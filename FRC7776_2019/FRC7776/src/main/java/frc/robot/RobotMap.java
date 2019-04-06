@@ -24,9 +24,8 @@ public class RobotMap {
 	 public static int rightRearMotor = 3;
 	 public static int robotArmPort = 4;
 	 public static int robotHandPort = 5;
-	 public static int robotWheelPort = 7;
-	 //public static int drivePort = 3;
-	 //public static int elevatorPort = 4;
+	 
+	
 	 public static int joystickPort = 0;
 	 public static int gamePadPort = 1;
 
@@ -40,10 +39,7 @@ public class RobotMap {
 	 
 	 //autonomous code 
 	 
-	 //public static double driveForwardTime= 2.2;
-	 //public static double driveForwardSpeed= -0.7;
-	 //public static double elevatorUpTimeOut= 1.3;
-	 //public static double elevatorUpSpeed= 1.0;
+	
 	 
 	 //telop throttling 
 	 
